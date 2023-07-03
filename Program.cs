@@ -1,5 +1,5 @@
-﻿System.Console.OutputEncoding = System.Text.Encoding.UTF8;
-System.Console.InputEncoding = System.Text.Encoding.UTF8;
+﻿Console.OutputEncoding = System.Text.Encoding.Unicode;
+Console.InputEncoding = System.Text.Encoding.Unicode;
 
 // Task 1
 Order order1 = new Order();
@@ -8,7 +8,7 @@ order1.ShowOrder();
 
 // Task 2
 List<Price> prices = new List<Price>();
-Price price1 = new Price("Toy", "ToyStore", 100);
+Price price1 = new Price("Toy1", "ToyStore", 100);
 Price price2 = new Price("Toy2", "ToyStore", 200);
 Price price3 = new Price("Toy3", "ToyStore", 300);
 prices.Add(price1);
