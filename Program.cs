@@ -15,7 +15,7 @@ prices.Add(price1);
 prices.Add(price2);
 prices.Add(price3);
 Console.Write("\nЗавдання 2.\nВведіть назву шуканого товару: ");
-string searchProduct = Console.ReadLine();
+string searchProduct = Console.ReadLine() ?? throw new InvalidOperationException();
 bool isFound = false;
 foreach (Price obj in prices)
 {
@@ -59,7 +59,6 @@ while (true)
     catch (Exception)
     {
         Console.Write("Введіть довжину прямокутника: ");
-        continue;
     }
 }
 Console.Write("Введіть ширину прямокутника: ");
@@ -73,8 +72,9 @@ while (true)
     catch (Exception)
     {
         Console.Write("Введіть ширину прямокутника: ");
-        continue;
     }
 }
 Rectangle rect1 = new Rectangle(side1, side2);
-Console.WriteLine($"Площа прямокутника дорівнює {rect1.AreaCalculator()} кв.од.\nПериметер прямокутника сягає {rect1.PerimeterCalculator()} од.");
+double rect1_area = rect1.AreaCalculator();
+double rect1_perimeter = rect1.PerimeterCalculator();
+Console.WriteLine($"Площа прямокутника дорівнює {rect1_area} кв.од.\nПериметер прямокутника сягає {rect1_perimeter} од.");

@@ -7,23 +7,23 @@
     public void EnterIBANs() // Entering IBAN
     {
         Console.Write("Завдання 1.\nВведіть розрахунковий номер (IBAN) платника: ");
-        payer_iban = Console.ReadLine();
+        payer_iban = Console.ReadLine() ?? throw new InvalidOperationException();
 
         void EnterPayerName() // Local Payer Name setter
         {
             Console.Write("І ще введіть повне ім'я платника: ");
-            payer_name = Console.ReadLine();
+            payer_name = Console.ReadLine() ?? throw new InvalidOperationException();
         }
         EnterPayerName();
 
 
         Console.Write("\nТепер введіть розрахунковий номер (IBAN) одержувача: ");
-        receiver_iban = Console.ReadLine();
+        receiver_iban = Console.ReadLine() ?? throw new InvalidOperationException();
 
         void EnterReceiverName() // Local Receiver Name setter
         {
             Console.Write("І ще введіть повне ім'я отримувача: ");
-            receiver_name = Console.ReadLine();
+            receiver_name = Console.ReadLine() ?? throw new InvalidOperationException();
         }
         EnterReceiverName();
     }
